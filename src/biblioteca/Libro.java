@@ -27,11 +27,11 @@ public class Libro {
         this.disponible = disponible;
     }
     
-    public boolean prestarLibro(boolean disponible){
+    public boolean prestarLibro(){
         
-        if (disponible==true) {
+        if (disponible) {
             
-            disponible=false;
+            this.disponible=false;
             
             JOptionPane.showMessageDialog(null, "El libro se ha prestado");
             
@@ -45,11 +45,11 @@ public class Libro {
         
     }
     
-    public boolean devolverLibro(boolean disponible){
+    public boolean devolverLibro(){
         
-        if (disponible==false) {
+        if (disponible) {
             
-            disponible=true;
+            this.disponible=true;
             
             JOptionPane.showMessageDialog(null, "El libro se ha devuelto");
             
@@ -65,23 +65,13 @@ public class Libro {
     
     public String mostrarInfo(){
         
-        String x;
-        
-        if (disponible=true) {
-            
-            x ="Disponible";
-            
-        } else {
-            
-            x="No disponible";
-            
-        }
-        
-           return "Titulo del libro: " + titulo + "\n" +
-                  "Autor del libro: " + autor + "\n" +
-                  "Codigo del libro: " + codigo + "\n" + 
-                  "Estado: " + x + "\n" + 
-                  "-------------------------------------" + "\n";
+        String estado = disponible ? "Disponible" : "No disponible";
+
+        return "Titulo del libro: " + titulo + "\n" +
+               "Autor del libro: " + autor + "\n" +
+               "Codigo del libro: " + codigo + "\n" +
+               "Estado: " + estado + "\n" +
+               "-------------------------------------\n";
     }
 
     public String getTitulo() {

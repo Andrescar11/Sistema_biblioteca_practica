@@ -133,6 +133,8 @@ public class Menu {
 
             case 5:
                 
+                encontrado=false;
+                
                 a=JOptionPane.showInputDialog("Ingrese el codigo del libro a buscar");
                 
                 for (Libro l : libros) {
