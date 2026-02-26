@@ -33,13 +33,13 @@ public class Libro {
             
             this.disponible=false;
             
-            JOptionPane.showMessageDialog(null, "El libro se ha prestado");
+            JOptionPane.showMessageDialog(null, " El libro se ha prestado ");
             
                     
             return disponible;
             
         } else {
-            JOptionPane.showMessageDialog(null, "Este libro está ocupado");
+            JOptionPane.showMessageDialog(null, " Este libro está ocupado ");
         }
         return false;
         
@@ -51,13 +51,13 @@ public class Libro {
             
             this.disponible=true;
             
-            JOptionPane.showMessageDialog(null, "El libro se ha devuelto");
+            JOptionPane.showMessageDialog(null, " El libro se ha devuelto ");
             
                     
             return disponible;
             
         } else {
-            JOptionPane.showMessageDialog(null, "Este libro no se ha prestado");
+            JOptionPane.showMessageDialog(null, " Este libro no se ha prestado ");
         }
         return false;
         

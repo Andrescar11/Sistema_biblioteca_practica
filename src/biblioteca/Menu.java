@@ -157,6 +157,42 @@ public class Menu {
                 
             case 6:
                 
+                boolean eliminado=false;
+                
+                String codEliminar=JOptionPane.showInputDialog("Ingresa el codigo del libro que quieres eliminar");
+                        
+                if (!codEliminar.isBlank()) {
+                    
+                    for (int i = 0; i < libros.size(); i++) {
+                        
+                        if (codEliminar.equals(libros.get(i).getCodigo())) {
+                            
+                            libros.remove(i);
+                            
+                            eliminado=true;
+                            
+                            break;
+                            
+                        }
+                        
+                    }
+                    
+                    if (eliminado=false) {
+                        
+                        JOptionPane.showMessageDialog(null, "No se eliminó el archivo o no se encontro");
+                        
+                    }
+                    
+                } else {
+                    
+                    JOptionPane.showMessageDialog(null, "Ingrese un campo");
+                    
+                }
+                
+                break;
+                
+            case 7:
+                
                 JOptionPane.showMessageDialog(null, "PROGRAMA FINALIZADO");
                 
                 break;
