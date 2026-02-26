@@ -59,6 +59,8 @@ public class Menu {
                 
             case 2:
                 
+                encontrado=false;
+                
                 a=JOptionPane.showInputDialog("Ingrese el codigo del libro a prestar");
                 
                 for (Libro l : libros) {
@@ -83,6 +85,8 @@ public class Menu {
                 
             case 3:
                 
+                encontrado=false;
+                
                 a=JOptionPane.showInputDialog("Ingrese el codigo del libro a devolver");
                 
                 for (Libro l : libros) {
@@ -106,17 +110,27 @@ public class Menu {
                 break;
                 
             case 4:
-                
-                for (Libro l2 : libros) {
-                    
-                    JOptionPane.showMessageDialog(null, "=============================================");    
-                    JOptionPane.showMessageDialog(null, l2.mostrarInfo());
-                    JOptionPane.showMessageDialog(null, "=============================================");
-                    
-                }
-                
-                break;
-                
+
+                    javax.swing.JTextArea area = new javax.swing.JTextArea(15, 40);
+                    area.setEditable(false);
+
+                    if (libros.isEmpty()) {
+                        area.setText("No hay libros registrados.");
+                    } else {
+
+                        for (Libro l : libros) {
+                            area.append(l.mostrarInfo() + "\n");
+                        }
+                    }
+
+                    javax.swing.JScrollPane scroll = new javax.swing.JScrollPane(area);
+
+                    JOptionPane.showMessageDialog(null, scroll,
+                            "LIBROS REGISTRADOS",
+                            JOptionPane.INFORMATION_MESSAGE);
+
+                    break;
+
             case 5:
                 
                 a=JOptionPane.showInputDialog("Ingrese el codigo del libro a buscar");

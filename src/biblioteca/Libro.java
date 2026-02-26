@@ -80,7 +80,8 @@ public class Libro {
            return "Titulo del libro: " + titulo + "\n" +
                   "Autor del libro: " + autor + "\n" +
                   "Codigo del libro: " + codigo + "\n" + 
-                  "Estado: " + x;
+                  "Estado: " + x + "\n" + 
+                  "-------------------------------------" + "\n";
     }
 
     public String getTitulo() {
